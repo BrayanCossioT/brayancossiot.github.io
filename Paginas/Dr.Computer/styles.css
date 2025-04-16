@@ -1,0 +1,136 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url(./IMG/Fondo.gif) no-repeat center center fixed;
+  background-size: cover;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;  
+}
+
+/* Asegura que el contenido ocupe todo el espacio disponible */
+.contenido {
+  flex: 1;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #00000000;
+  padding: 10px 20px;
+  color: white;
+}
+
+.menu {
+  display: none;
+}
+
+.menu-toggle {
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.presentacion-box {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 900px;
+  width: 95%;
+  text-align: left;
+  font-weight: bold;
+  margin: 20px auto;
+}
+
+.presentacion-box h1,
+.presentacion-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.presentacion-box p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.servicios {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.servicios li {
+  margin-bottom: 10px;
+  list-style-type: disc;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  background-color: #000000c3;
+  color: white;
+  text-align: center;
+  padding: 3px 0;
+  font-size: 15px;
+  width: 100%;
+  margin-top: auto;  /* Esto empuja el footer al fondo de la pantalla */
+}
+
+.header {
+  color: white;
+  text-align: center;
+  padding: 80px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.header h1,
+.header h2,
+.header p{
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 25px;
+  border-radius: 12px;
+  margin: 0;
+  max-width: 90%;
+  font-weight: bold;
+}
+
+.copyright {
+  padding: 7px;
+}
+.logo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.logo-contenedor {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espacio entre logo y texto */
+}
+
+.logo-contenedor img {
+  width: 50px;
+}
+
+.logo-contenedor a {
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+}
+

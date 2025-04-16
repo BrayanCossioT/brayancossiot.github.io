@@ -1,0 +1,270 @@
+/* Estilos generales para html y body */
+html, body {
+  margin: 0; /* Elimina márgenes predeterminados */
+  padding: 0; /* Elimina el padding predeterminado */
+  height: 100vh; /* Asegura que el cuerpo ocupe el 100% de la altura de la ventana */
+  width: 100%; /* Asegura que el cuerpo ocupe el 100% de la anchura de la ventana */
+  background-color: #171616; /* Establece un fondo gris oscuro */
+  color: white; /* Texto blanco para buen contraste en el fondo oscuro */
+  font-family: 'Times New Roman', Times, serif; /* Fuente personalizada */
+  display: flex;
+  flex-direction: column; /* Organiza los elementos en columna para una estructura de página vertical */
+  justify-content: space-between; /* Asegura que la navbar y pie de página estén separados */
+}
+::-webkit-scrollbar {
+width: 10px;
+height: 5px;
+}
+::-webkit-scrollbar-track {
+background-color: #000000;
+}
+::-webkit-scrollbar-thumb {
+background: white;
+border-radius: 5px;
+border: 3px solid #121212;
+}
+/* Navbar (barra de navegación) */
+.navbar {
+background-color: #000000; /* Fondo negro para la barra de navegación */
+display: flex; /* Usa flexbox para organizar los elementos */
+justify-content: space-between; /* Espacia el logo y las opciones */
+align-items: center; /* Centra los elementos verticalmente */
+padding: 10px; /* Espaciado interno para la barra */
+width: 100%; /* La barra ocupa el ancho completo de la pantalla */
+z-index: 1000; /* Coloca la navbar sobre otros elementos si hay superposición */
+}
+.navbar a {
+color: white; /* Color de texto blanco para los enlaces */
+text-decoration: underline; /* Subraya los enlaces */
+transition: color 0.3s ease, background-color 0.3s ease; /* Transición para color y fondo al hacer hover */
+}
+.navbar .logo a {
+font-size: 28px; /* Tamaño de fuente para el logo */
+font-weight: bold; /* Texto en negrita */
+padding: 8px 10px; /* Espaciado alrededor del logo */
+}
+.navbar .logo a:hover {
+color: #ff00bf; /* Color de hover para el logo */
+background-color: #313131; /* Fondo gris oscuro en hover */
+cursor: pointer; /* Cambia a cursor de puntero */
+border-radius: 10px; /* Bordes redondeados al hacer hover */
+}
+.navbar .opciones {
+display: flex; /* Flexbox para alinear las opciones de navegación */
+flex-grow: 1; /* Las opciones ocupan el espacio disponible */
+justify-content: space-evenly; /* Distribuye uniformemente las opciones */
+margin-top: 10px; /* Margen superior para alinear mejor */
+}
+.navbar .opciones a {
+font-size: 18px; /* Tamaño de fuente para las opciones */
+font-weight: bold; /* Negrita en las opciones */
+padding: 10px 20px; /* Espaciado alrededor de cada opción */
+}
+.navbar .opciones a:hover {
+color: #ff00bf; /* Color de hover para las opciones */
+background-color: #313131; /* Fondo en hover */
+cursor: pointer; /* Muestra un cursor de puntero */
+border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Media Queries para ajuste en pantallas pequeñas */
+@media (max-width: 768px) {
+.navbar .opciones a {
+  padding: 5px 10px; /* Reduce el padding en pantallas pequeñas */
+  font-size: 16px; /* Reduce el tamaño de fuente en pantallas pequeñas */
+}
+.navbar .opciones a:hover {
+  color: rgba(255, 0, 191, 0.8); /* Color menos intenso en hover */
+}
+}
+/* Ajuste para pantallas de alta resolución */
+@media (min-resolution: 2dppx) {
+.navbar .opciones a:hover {
+  color: rgba(
+    255,
+    0,
+    191,
+    0.7
+  ); /* Color ajustado para brillo en alta resolución */
+}
+}
+
+/* Animación de desvanecimiento */
+@keyframes fadeIn {
+from {
+  opacity: 0; /* Comienza totalmente transparente */
+}
+to {
+  opacity: 1; /* Termina completamente visible */
+}
+}
+.fade {
+opacity: 0; /* Comienza oculto */
+animation: fadeIn 0.5s ease-out forwards; /* Aplica la animación de desvanecimiento */
+}
+
+/* Aplica la animación a estos elementos específicos */
+.supencabezado,
+.navbar,
+.contacto {
+animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Estilos para la sección de encabezado */
+.header {
+display: flex; /* Flexbox para centrar el contenido */
+justify-content: center; /* Centra horizontalmente */
+align-items: center; /* Centra verticalmente */
+height: 100vh; /* Asegura que el encabezado ocupe toda la altura de la ventana */
+background: url(mont.jpg) no-repeat center center; /* Imagen de fondo centralizada */
+background-size: cover; /* La imagen cubre toda el área del contenedor */
+}
+.title {
+margin-bottom: 10px;
+font-size: 60px; /* Tamaño grande para el título principal */
+font-weight: 600;
+color: white; /* Texto en blanco */
+text-decoration: underline;
+text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Sombra para dar profundidad */
+}
+.sub {
+margin-bottom: 10px;
+font-size: 30px; /* Tamaño de fuente para el subtítulo */
+font-weight: 600;
+color: white;
+text-decoration: underline;
+text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Sombra para el subtítulo */
+}
+p {
+margin-bottom: 40px;
+font-size: 25px; /* Tamaño de fuente de los párrafos */
+color: white;
+text-align: center; /* Centra el texto */
+text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Sombra para dar profundidad */
+}
+
+/* Contenedor de contenido */
+.content {
+height: 50vh;
+display: flex;
+flex-direction: column; /* Los elementos dentro estarán en columna */
+justify-content: center; /* Centra verticalmente */
+align-items: center; /* Centra horizontalmente */
+flex: 1; /* Rellena el espacio disponible */
+}
+
+/* SECCIÓN (Estilos para una sección que incluye imágenes y texto) */
+.section {
+  display: flex; /* Usa flexbox para organizar las columnas */
+  justify-content: space-between; /* Distribuye las columnas uniformemente */
+  align-items: center; /* Centra verticalmente */
+  margin: 20px 0; /* Espaciado entre las secciones */
+  padding: 20px; /* Espaciado interno para el rectángulo */
+  background-color: #333; /* Fondo del rectángulo (gris oscuro) */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para darle profundidad */
+}
+
+/* Imágenes laterales (izquierda y derecha) */
+.left-images, .right-images {
+  width: 25%; /* Mantén el ancho de las columnas en 25% */
+  display: flex;
+  flex-direction: column; /* Apila las imágenes verticalmente */
+  align-items: center;
+  gap: 10px; /* Espaciado entre las imágenes */
+}
+
+.left-images img, .right-images img {
+  width: 80%; /* Reduce el ancho de las imágenes al 80% del contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+  border-radius: 10px; /* Bordes redondeados para las imágenes */
+}
+.left-images img:hover {
+  transform: scale(1.3); /* Zoom al pasar el mouse */
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); /* Sombra para resaltar */
+  transition: transform 0.3s ease; 
+}
+/*
+  content: url('./Pintores/Leonardo-da-Vinci.jpg');
+*/
+
+/* Contenido de texto */
+.text-content {
+  width: 50%; /* Ocupa la mitad del espacio disponible */
+  display: flex;
+  flex-direction: column; /* Apila el texto en columna */
+  text-align: left; /* Texto alineado a la izquierda */
+}
+
+.text-content h2 {
+  margin-bottom: 10px; /* Espaciado entre el título y el párrafo */
+  font-size: 24px; /* Tamaño de fuente del encabezado */
+  font-weight: bold; /* Negrita para el encabezado */
+  text-decoration: underline; /* Subrayado para el encabezado */
+}
+
+.text-content p {
+  margin: 0; /* Elimina márgenes predeterminados */
+  line-height: 1.6; /* Espaciado entre líneas */
+  font-size: 18px; /* Tamaño de fuente del párrafo */
+  text-align: left;
+}
+
+/* Ajustes responsivos para pantallas pequeñas */
+@media (max-width: 768px) {
+  .section {
+      flex-direction: column; /* Cambia a diseño vertical */
+      align-items: center; /* Centra los elementos */
+  }
+  
+  .left-images, .right-images {
+      width: 100%; /* Ocupa todo el ancho en pantallas pequeñas */
+  }
+
+  .text-content {
+      width: 100%; /* Asegura que el texto también ocupe todo el ancho */
+      text-align: center; /* Centra el texto */
+  }
+}
+
+/* Pie de página */
+.piepg {
+  background-color: #000000; /* Fondo negro */
+  display: flex;
+  flex-direction: column; /* Asegura que los elementos estén en columna */
+  align-items: center; /* Centra los elementos horizontalmente */
+  padding: 20px; /* Espaciado interno */
+  color: white; /* Texto blanco */
+  width: 100%; /* Ancho completo */
+  gap: 15px; /* Espaciado entre los elementos */
+}
+
+.contacto {
+  display: flex; /* Flexbox para organizar los enlaces */
+  justify-content: center; /* Centra los enlaces horizontalmente */
+  flex-wrap: wrap; /* Permite que los enlaces ocupen varias líneas si es necesario */
+  gap: 10px; /* Espaciado entre los botones */
+}
+
+.contacto a {
+  color: white; /* Texto blanco */
+  text-decoration: underline; /* Subraya los enlaces */
+  transition: color 0.3s ease, background-color 0.3s ease; /* Animaciones suaves */
+  padding: 10px 20px; /* Espaciado interno */
+  font-size: 18px; /* Tamaño de fuente */
+  font-weight: bold; /* Texto en negrita */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+.contacto a:hover {
+  color: #ff00bf; /* Color de hover */
+  background-color: #313131; /* Fondo de hover */
+  cursor: pointer; /* Cambia a cursor de puntero */
+}
+
+.piepg .copyright {
+  text-align: center; /* Centra el texto de copyright */
+  font-size: 16px; /* Tamaño de fuente */
+  margin-top: 10px; /* Espaciado superior */
+}
