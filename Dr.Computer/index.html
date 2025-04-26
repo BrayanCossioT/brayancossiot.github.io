@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Dr.Computer: Mantenimiento y asesoría técnica para computadoras y laptops."
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Paprika&display=swap"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Dr.Computer</title>
+    <link rel="icon" href="./IMG/LOGO2.png" />
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="logo">
+        <div class="logo-contenedor">
+          <img src="./IMG/LOGO2.png" alt="Dr.Computer" />
+          <a href="index.html"
+            ><em><u>Dr.Computer</u></em></a
+          >
+        </div>
+      </div>
+      <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+    </div>
+
+    <div class="opciones">
+      <div class="sidebar open" id="sidebar">
+        <ul class="opciones">
+          <li class="dropdown">
+            <a href="#" onclick="toggleDropdown(event)"
+              >Servicios <span class="arrow">▶</span></a
+            >
+            <ul class="submenu">
+              <li class="dropdown">
+                <a href="#" onclick="toggleDropdown(event)"
+                  >Computadoras <span class="arrow">▶</span></a
+                >
+                <ul class="subsubmenu">
+                  <li class="dropdown">
+                    <a href="#" onclick="toggleDropdown(event)"
+                      >Mantenimiento <span class="arrow">▶</span></a
+                    >
+                    <ul class="subsubmenu">
+                      <li><a href="https://wa.me/51977842954?text=Hola,%20mi%20computadora%20necesita%20mantenimiento%20preventivo,%20%C2%BFme%20pueden%20ayudar%3F">Preventivo</a></li>
+                      <li><a href="https://wa.me/51977842954?text=Hola,%20mi%20computadora%20necesita%20mantenimiento%20correctivo,%20%C2%BFme%20pueden%20ayudar%3F">Correctivo</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#" onclick="toggleDropdown(event)"
+                      >Optimizar <span class="arrow">▶</span></a
+                    >
+                    <ul class="subsubmenu">
+                      <li><a href="https://wa.me/51977842954?text=Hola,%20quiero%20optimizar%20el%20Hardware%20de%20mi%20computadora,%20%C2%BFme%20pueden%20ayudar%3F">Hardware</a></li>
+                      <li><a href="https://wa.me/51977842954?text=Hola,%20quiero%20optimizar%20el%20Software%20de%20mi%20computadora,%20%C2%BFme%20pueden%20ayudar%3F">Software</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#" onclick="toggleDropdown(event)"
+                  >Laptops <span class="arrow">▶</span></a
+                >
+                <ul class="subsubmenu">
+                  <li class="dropdown">
+                    <a href="#" onclick="toggleDropdown(event)">Mantenimiento<span class="arrow">▶</span></a
+                    >
+                    <ul class="subsubmenu">
+                      <li><a href="https://wa.me/51977842954?text=Hola,%20mi%20laptop%20necesita%20mantenimiento%20preventivo,%20%C2%BFme%20pueden%20ayudar%3F">Preventivo</a></li>
+                      <li><a href="https://wa.me/51977842954?text=Hola,%20mi%20laptop%20necesita%20mantenimiento%20correctivo,%20%C2%BFme%20pueden%20ayudar%3F">Correctivo</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#" onclick="toggleDropdown(event)"
+                      >Optimizar <span class="arrow">▶</span></a
+                    >
+                    <ul class="subsubmenu">
+                      <li><a href="https://wa.me/51977842954?text=Hola,%20quiero%20optimizar%20el%20Hardware%20de%20mi%20laptop,%20%C2%BFme%20pueden%20ayudar%3F">Hardware</a></li>
+                      <li><a href="https://wa.me/51977842954?text=Hola,%20quiero%20optimizar%20el%20Software%20de%20mi%20laptop,%20%C2%BFme%20pueden%20ayudar%3F">Software</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" onclick="toggleDropdown(event)"
+              >Comprar <span class="arrow">▶</span></a
+            >
+            <ul class="submenu">
+              <li>
+                <a
+                  href="https://wa.me/51977842954?text=Hola%2C%20quiero%20comprar%20una%20computadora.%20¿Me%20pueden%20ayudar%3F"
+                  target="_blank"
+                  >Computadoras</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://wa.me/51977842954?text=Hola%2C%20quiero%20comprar%20una%20laptop.%20¿Me%20pueden%20ayudar%3F"
+                  target="_blank"
+                  >Laptops</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" onclick="toggleDropdown(event)"
+              >Contáctanos <span class="arrow">▶</span></a
+            >
+            <ul class="submenu">
+              <li>
+                <a
+                  href="https://wa.me/51977842954?text=Hola,%20quiero%20más%20información"
+                  >Whatsapp</a
+                >
+              </li>
+              <li><a href="https://www.facebook.com/profile.php?id=61575324759766">Facebook</a></li>
+              <!--<li><a href="#">Instagram</a></li>-->
+            </ul>
+          </li>
+          <li><a href="#" id="btn-consejos">Consejos</a></li>
+          <li><a href="planesyprecios.html" id="btn-consejos">Planes y Precios</a></li>
+          <!-- Contenedor para mostrar los consejos -->
+          <div
+            id="consejos-container"
+            style="display: none; text-align: center; margin-top: 20px"
+          >
+            <h3>Consejo:</h3>
+            <p id="consejo-texto"></p>
+          </div>
+        </ul>
+      </div>
+    </div>
+    <header class="header">
+      <div class="presentacion-box">
+        <h1>Dr.Computer</h1>
+        <h2>¿Quiénes somos?</h2>
+        <p>
+          En Dr.Computer nos especializamos en el mantenimiento preventivo y
+          correctivo de computadoras y laptops, asegurando que tus equipos
+          funcionen de manera óptima y prolongando su vida útil.
+        </p>
+        <p>
+          Nuestro compromiso es brindarte soluciones rápidas, eficientes y
+          personalizadas, adaptándonos a tus necesidades y presupuesto.
+        </p>
+        <p>Contamos con experiencia en:</p>
+        <ul class="servicios">
+          <li>Limpieza profunda de hardware</li>
+          <li>Eliminación de virus</li>
+          <li>Optimización de sistemas operativos</li>
+          <li>Actualización de componentes</li>
+          <li>Asesoría técnica especializada</li>
+        </ul>
+        <p>
+          Ya sea que tu equipo necesite una mejora de rendimiento o una
+          reparación urgente, en Dr.Computer estamos listos para ayudarte con un
+          servicio confiable y profesional.
+        </p>
+      </div>
+    </header>
+    <footer>
+      <div class="copyright">
+        Copyright © 2025 - Derechos Reservados Programador Web: Cossio Torres
+        Brayan Ricardo D.C.
+      </div>
+    </footer>
+    <script src="script.js" defer></script>
+  </body>
+</html>

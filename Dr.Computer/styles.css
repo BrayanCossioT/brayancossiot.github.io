@@ -1,0 +1,300 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url(./IMG/Fondo.gif) no-repeat center center fixed;
+  background-size: cover;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;  
+}
+
+/* Asegura que el contenido ocupe todo el espacio disponible */
+.contenido {
+  flex: 1;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #00000000;
+  padding: 10px 20px;
+  color: white;
+}
+
+.menu {
+  display: none;
+}
+
+.menu-toggle {
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.presentacion-box {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 900px;
+  width: 95%;
+  text-align: left;
+  font-weight: bold;
+  margin: 20px auto;
+}
+
+.presentacion-box h1,
+.presentacion-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.presentacion-box p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.servicios {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.servicios li {
+  margin-bottom: 10px;
+  list-style-type: disc;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  background-color: #000000c3;
+  color: white;
+  text-align: center;
+  padding: 3px 0;
+  font-size: 15px;
+  width: 100%;
+  margin-top: auto;  /* Esto empuja el footer al fondo de la pantalla */
+}
+
+.header {
+  color: white;
+  text-align: center;
+  padding: 80px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.header h1,
+.header h2,
+.header p{
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 25px;
+  border-radius: 12px;
+  margin: 0;
+  max-width: 90%;
+  font-weight: bold;
+}
+
+.copyright {
+  padding: 7px;
+}
+
+.logo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.logo-contenedor {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espacio entre logo y texto */
+}
+
+.logo-contenedor img {
+  width: 50px;
+}
+
+.logo-contenedor a {
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+@media (max-width: 768px) {
+    .menu-lateral {
+        width: 100%;
+        position: relative;
+        box-shadow: none;
+        border: none;
+        background-color: #f9f9f9;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .menu-lateral ul {
+        padding-left: 15px;
+    }
+
+    .menu-lateral ul li {
+        margin-bottom: 8px;
+    }
+
+    .menu-lateral a {
+        display: block;
+        padding: 8px 12px;
+        border-radius: 8px;
+        background-color: #eee;
+        color: #333;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .menu-lateral a:hover {
+        background-color: #ddd;
+    }
+
+    .menu-lateral .subopciones,
+    .menu-lateral .sub-subopciones {
+        padding-left: 20px;
+    }
+}
+
+/* NUEVO ESTILO ADICIONADO */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #00000000;
+  padding: 10px 20px;
+  color: white;
+  position: relative;
+  z-index: 1001;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.logo a {
+  font-weight: bold;
+  color: white; /* o el color que usted use */
+  gap: 10px; /* Espacio entre imagen y texto */
+}
+
+.navbar .logo img {
+  width: 50px;
+  height: auto;
+}
+
+.menu-btn {
+  background-color: #0000005a;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: #00000095;
+  color: white;
+  overflow-y: auto;
+  transition: left 0.3s ease;
+  padding-top: 60px;
+  z-index: 1000;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sidebar a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.submenu,
+.subsubmenu {
+  display: none;
+  padding-left: 10px;
+}
+
+.dropdown.open > .submenu,
+.dropdown.open > .subsubmenu {
+  display: block;
+}
+
+.arrow {
+  font-size: 0.8em;
+  margin-left: 10px;
+}
+
+.contenido {
+  flex: 1;
+  padding: 20px;
+}
+
+.presentacion-box {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 900px;
+  width: 95%;
+  text-align: left;
+  font-weight: bold;
+  margin: 20px auto;
+  color: white;
+}
+
+.presentacion-box h1,
+.presentacion-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.presentacion-box p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.servicios {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.servicios li {
+  margin-bottom: 10px;
+  list-style-type: disc;
+}
