@@ -43,7 +43,7 @@ body {
 }
 
 .presentacion-box {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0);
   padding: 30px;
   border-radius: 15px;
   max-width: 900px;
@@ -77,7 +77,7 @@ body {
 
 /* Footer */
 footer {
-  background-color: #000000c3;
+  background-color: rgba(0, 0, 0, 0.8);
   color: white;
   text-align: center;
   padding: 3px 0;
@@ -100,7 +100,7 @@ footer {
 .header h1,
 .header h2,
 .header p{
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   padding: 10px 25px;
   border-radius: 12px;
   margin: 0;
@@ -135,45 +135,6 @@ footer {
   font-family: 'Times New Roman', Times, serif;
 }
 
-@media (max-width: 768px) {
-    .menu-lateral {
-        width: 100%;
-        position: relative;
-        box-shadow: none;
-        border: none;
-        background-color: #f9f9f9;
-        padding: 10px;
-        font-size: 16px;
-    }
-
-    .menu-lateral ul {
-        padding-left: 15px;
-    }
-
-    .menu-lateral ul li {
-        margin-bottom: 8px;
-    }
-
-    .menu-lateral a {
-        display: block;
-        padding: 8px 12px;
-        border-radius: 8px;
-        background-color: #eee;
-        color: #333;
-        text-decoration: none;
-        font-weight: bold;
-    }
-
-    .menu-lateral a:hover {
-        background-color: #ddd;
-    }
-
-    .menu-lateral .subopciones,
-    .menu-lateral .sub-subopciones {
-        padding-left: 20px;
-    }
-}
-
 /* NUEVO ESTILO ADICIONADO */
 
 .navbar {
@@ -200,7 +161,7 @@ footer {
 }
 
 .menu-btn {
-  background-color: #0000005a;
+  background-color: rgba(0, 0, 0, 0.7);
   color: white;
   padding: 10px 15px;
   border: none;
@@ -212,9 +173,9 @@ footer {
   position: fixed;
   top: 0;
   left: -300px;
-  width: 300px;
+  width: 290px;
   height: 100%;
-  background-color: #00000095;
+  background-color: rgba(0, 0, 0, 0.7);
   color: white;
   overflow-y: auto;
   transition: left 0.3s ease;
@@ -242,7 +203,7 @@ footer {
 }
 
 .sidebar a:hover {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .submenu,
@@ -276,12 +237,15 @@ footer {
   font-weight: bold;
   margin: 20px auto;
   color: white;
+  
+  
 }
 
 .presentacion-box h1,
 .presentacion-box h2 {
   text-align: center;
   margin-bottom: 20px;
+  
 }
 
 .presentacion-box p {
@@ -297,4 +261,50 @@ footer {
 .servicios li {
   margin-bottom: 10px;
   list-style-type: disc;
+}
+::-webkit-scrollbar {
+  width: 0px; /* Ancho de la barra vertical */
+}
+/* Estilos aplicados solo cuando la pantalla tiene 768px o menos (modo móvil) */
+@media (max-width: 720px) {
+  
+  .menu-lateral {
+      width: 100%; /* El menú ocupa todo el ancho disponible */
+      position: relative; /* Se posiciona en relación a su posición normal */
+      box-shadow: none; /* Elimina cualquier sombra */
+      border: none; /* Sin bordes */
+      background-color: #f9f9f9; /* Fondo gris claro */
+      padding: 10px; /* Espacio interno */
+      font-size: 200px; /* Tamaño de texto legible */
+  }
+
+  .menu-lateral ul {
+      padding-left: 0px; /* Espacio a la izquierda para los elementos de lista */
+  }
+
+  .menu-lateral ul li {
+      margin-bottom: 30px; /* Separación vertical entre elementos */
+  }
+
+  .menu-lateral a {
+      display: block; /* El enlace ocupa toda la línea como un bloque */
+      padding: 8px 12px; /* Espaciado interno del enlace */
+      border-radius: 8px; /* Bordes redondeados */
+      background-color: #eee; /* Fondo gris claro para los enlaces */
+      color: #333; /* Texto gris oscuro */
+      text-decoration: none; /* Quita el subrayado */
+      font-weight: bold; /* Texto en negrita */
+  }
+
+  .menu-lateral a:hover {
+      background-color: #ddd; /* Color de fondo más oscuro al pasar el mouse */
+  }
+
+  .menu-lateral .subopciones,
+  .menu-lateral .sub-subopciones {
+      padding-left: 20px; /* Indentación adicional para subniveles */
+  }
+::-webkit-scrollbar {
+  width: 0px; /* Ancho de la barra vertical */
+}
 }
