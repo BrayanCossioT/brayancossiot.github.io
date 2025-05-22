@@ -21,15 +21,6 @@ body {
   flex: 1;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #00000000;
-  padding: 10px 20px;
-  color: white;
-}
-
 .menu {
   display: none;
 }
@@ -43,7 +34,7 @@ body {
 }
 
 .presentacion-box {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.301);
   padding: 30px;
   border-radius: 15px;
   max-width: 900px;
@@ -51,6 +42,7 @@ body {
   text-align: left;
   font-weight: bold;
   margin: 20px auto;
+  color: white;
 }
 
 .presentacion-box h1,
@@ -100,7 +92,7 @@ footer {
 .header h1,
 .header h2,
 .header p{
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.425);
   padding: 10px 25px;
   border-radius: 12px;
   margin: 0;
@@ -141,7 +133,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #00000000;
+  background-color: #0000002d;
   padding: 10px 20px;
   color: white;
   position: relative;
@@ -175,7 +167,7 @@ footer {
   left: -300px;
   width: 290px;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.452);
   color: white;
   overflow-y: auto;
   transition: left 0.3s ease;
@@ -227,19 +219,6 @@ footer {
   padding: 20px;
 }
 
-.presentacion-box {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 30px;
-  border-radius: 15px;
-  max-width: 900px;
-  width: 95%;
-  text-align: left;
-  font-weight: bold;
-  margin: 20px auto;
-  color: white;
-  
-  
-}
 
 .presentacion-box h1,
 .presentacion-box h2 {
