@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corazón Animado</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: white;
+        }
+        canvas {
+            display: block;
+            margin: auto;
+        }
+        h1 {
+            color: red;
+            font-size: 36px;
+        }
+        .equation {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        #container {
+            display: none; /* Oculto al inicio */
+        }
+    </style>
+</head>
+<body>
+    <div id="inputSection">
+        <h2>Escribe la ecuación para continuar:</h2>
+        <input type="text" id="userInput" placeholder="Ingresa la ecuación aquí" size="50">
+        <button onclick="checkEquation()">Enviar</button>
+        <p id="error" style="color: red;"></p>
+    </div>
+
+    <div id="container">
+        <h1>¿Quieres ser mi enamorada?</h1>
+        <p class="equation">(x²)^(1/3) + 0.7 · sin(k · x) · sqrt(3 - x²)</p>
+        <p id="k-value">k = 0.00</p>
+    </div>
+
+    <script>
+        let k = 0;
+        let kSpeed = 0.05;
+        let showHeart = false;
+
+        function checkEquation() {
+            const input = document.getElementById("userInput").value.trim();
+            const correct = "(x²)^(1/3) + 0.7 · sin(k · x) · sqrt(3 - x²)";
+
+            if (input === correct) {
+                // Ocultar la parte de ingreso de ecuación
+                document.getElementById("inputSection").style.display = "none";
+                
+                // Mostrar el contenedor con animación
+                document.getElementById("container").style.display = "block";
+                showHeart = true;
+                setup();
+            } else {
+                document.getElementById("error").innerText = "Ecuación incorrecta, inténtalo de nuevo.";
+            }
+        }
+
+        function setup() {
+            createCanvas(400, 400).parent("container");
+        }
+
+        function draw() {
+            if (!showHeart) return;
+
+            background(17);
+            translate(width / 2, height / 2 + 50);
+            scale(100, -100);
+
+            stroke(255, 0, 0);
+            strokeWeight(0.02);
+            noFill();
+
+            beginShape();
+            for (let x = -Math.sqrt(3); x <= Math.sqrt(3); x += 0.01) {
+                let y = Math.cbrt(x * x) + 0.7 * Math.sin(k * x) * Math.sqrt(3 - x * x);
+                vertex(x, y);
+            }
+            endShape();
+
+            k += kSpeed;
+            document.getElementById("k-value").innerText = `k = ${k.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
