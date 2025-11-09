@@ -203,6 +203,73 @@ h2{font-size:1.5rem; margin-bottom:14px; font-weight:800}
   .hero-image{width:100%}
   .product-grid{grid-template-columns:1fr}
 }
+/* --- Ajustes adicionales para mejor responsividad --- */
+
+/* Ajustes generales para pantallas medianas */
+@media (max-width: 900px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  .hero-inner {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .hero-image img {
+    max-width: 80%;
+  }
+  .cta-row {
+    justify-content: center;
+  }
+}
+
+/* Pantallas pequeñas (celulares verticales) */
+@media (max-width: 600px) {
+  body {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .brand-name {
+    font-size: 1rem;
+  }
+
+  .hero-text .lead {
+    font-size: 0.95rem;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card img {
+    height: auto;
+  }
+
+  .cart {
+    width: 95%;
+    padding: 15px;
+  }
+
+  footer p {
+    font-size: 14px;
+  }
+}
+
+/* Extra pequeño (celulares compactos tipo iPhone SE) */
+@media (max-width: 400px) {
+  .btn, .btn-sm, .btn-sm-outline {
+    font-size: 0.85rem;
+    padding: 8px 10px;
+  }
+  .iconos-redes img {
+    width: 50px;
+    height: 50px;
+    margin: 0 6px;
+  }
+}
 
 /* --- Estilo mejorado del carrito --- */
 .cart {
