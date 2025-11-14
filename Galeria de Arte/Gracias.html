@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Just Art x BrayanCT</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet">
+  <style>
+    /* Main styles */
+    .text--transparent {
+      fill: transparent;
+    }
+
+    .anim-shape {
+      transform-origin: 0 300px;
+      transform: scale(0, 1) translate(0, 0);
+      animation: moving-panel 3s infinite alternate;
+    }
+
+    .colortext .anim-shape:nth-child(1) {
+      fill: #FF00FF;
+    }
+
+    .colortext .anim-shape:nth-child(2) {
+      fill: #FF69B4;
+    }
+
+    .colortext .anim-shape:nth-child(3) {
+      fill: #FF1493;
+    }
+
+    .colortext .anim-shape:nth-child(4) {
+      fill: #FFB6C1;
+    }
+
+    .colortext .anim-shape:nth-child(5) {
+      fill: #F26444;
+    }
+
+    .shadow {
+      transform: translate(10px, 10px);
+    }
+
+    .anim-shape--shadow {
+      fill: #000;
+      fill-opacity: 0.2;
+    }
+
+    @keyframes moving-panel {
+      100% {
+        transform: scale(1, 1) translate(20px, 0);
+      }
+    }
+
+    /* Other stuff */
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      background: rgb(71, 61, 61);
+      font: 5.5em/1 Open Sans, Impact;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    svg {
+      width: 100%;
+      max-width: 1200px;
+      height: 350px;
+    }
+
+    .text--line {
+      font-size: 48px;
+      fill: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="btn">
+    
+  </div>
+    
+  <svg viewBox="0 0 1200 350">
+    <!-- Clippath para "Esto fue" -->
+    <clippath id="cp-header-text">
+      <text text-anchor="middle"
+            x="50%"
+            y="20%"
+            dy=".35em"
+            class="text--line">
+        Esto fue
+      </text>
+    </clippath>
+
+    <!-- Clippath para "Just Art x BrayanCT" -->
+    <clippath id="cp-main-text">
+      <text text-anchor="middle"
+            x="50%"
+            y="50%"
+            dy=".35em"
+            class="text--line">
+        Just Art x BrayanCT
+      </text>
+    </clippath>
+
+    <!-- Clippath para "Gracias!!" -->
+    <clippath id="cp-sub-text">
+      <text text-anchor="middle"
+            x="50%"
+            y="80%"
+            dy=".35em"
+            class="text--line">
+        Gracias!!
+      </text>
+    </clippath>
+
+    <!-- Animación para "Esto fue" -->
+    <g clip-path="url(#cp-header-text)" class="shadow">
+      <rect width="100%" height="100%" class="anim-shape anim-shape--shadow"></rect>
+    </g>
+    <g clip-path="url(#cp-header-text)" class="colortext">
+      <rect width="100%" height="100%" class="anim-shape"></rect>
+      <rect width="80%" height="100%" class="anim-shape"></rect>
+      <rect width="60%" height="100%" class="anim-shape"></rect>
+      <rect width="40%" height="100%" class="anim-shape"></rect>
+      <rect width="20%" height="100%" class="anim-shape"></rect>
+    </g>
+
+    <!-- Animación para "Just Art x BrayanCT" -->
+    <g clip-path="url(#cp-main-text)" class="shadow">
+      <rect width="100%" height="100%" class="anim-shape anim-shape--shadow"></rect>
+    </g>
+    <g clip-path="url(#cp-main-text)" class="colortext">
+      <rect width="100%" height="100%" class="anim-shape"></rect>
+      <rect width="80%" height="100%" class="anim-shape"></rect>
+      <rect width="60%" height="100%" class="anim-shape"></rect>
+      <rect width="40%" height="100%" class="anim-shape"></rect>
+      <rect width="20%" height="100%" class="anim-shape"></rect>
+    </g>
+
+    <!-- Animación para "Gracias!!" -->
+    <g clip-path="url(#cp-sub-text)" class="shadow">
+      <rect width="100%" height="100%" class="anim-shape anim-shape--shadow"></rect>
+    </g>
+    <g clip-path="url(#cp-sub-text)" class="colortext">
+      <rect width="100%" height="100%" class="anim-shape"></rect>
+      <rect width="80%" height="100%" class="anim-shape"></rect>
+      <rect width="60%" height="100%" class="anim-shape"></rect>
+      <rect width="40%" height="100%" class="anim-shape"></rect>
+      <rect width="20%" height="100%" class="anim-shape"></rect>
+    </g>
+  </svg>
+</body>
+</html>
