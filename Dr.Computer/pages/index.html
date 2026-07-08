@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Dr.Computer: Mantenimiento y asesoría técnica para computadoras y laptops."
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Paprika&display=swap"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <title>Dr.Computer</title>
+    <link rel="icon" href="../IMG/LOGO2.png" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-790L8ZVCWF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-790L8ZVCWF');
+</script>
+
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="logo">
+        <div class="logo-contenedor">
+          <img src="../IMG/LOGO2.png" alt="Dr.Computer" />
+          <a href="index.html"
+            ><em><u>Dr.Computer</u></em></a
+          >
+        </div>
+      </div>
+      <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+    </div>
+
+    <div class="opciones">
+      <div class="sidebar" id="sidebar">
+        <ul class="opciones">
+          <li class="dropdown">
+            <a href="#" onclick="toggleDropdown(event)"
+              >Servicios <span class="arrow">▶</span></a
+            >
+            <ul class="submenu">
+              <li class="dropdown">
+                <a href="#" onclick="toggleDropdown(event)"
+                  >Computadoras <span class="arrow">▶</span></a
+                >
+                <ul class="subsubmenu">
+                  <li class="dropdown">
+                    <a href="#" onclick="toggleDropdown(event)"
+                      >Mantenimiento <span class="arrow">▶</span></a
+                    >
+                    <ul class="subsubmenu">
+                      <li><a href="https://wa.me/51977842954?text=Hola,%20mi%20computadora%20necesita%20mantenimiento%20preventivo,%20%C2%BFme%20pueden%20ayudar%3F">Preventivo</a></li>
+                      <li><a href="https://wa.me/51977842954?text=Hola,%20mi%20computadora%20necesita%20mantenimiento%20correctivo,%20%C2%BFme%20pueden%20ayudar%3F">Correctivo</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#" onclick="toggleDropdown(event)"
+                      >Optimizar <span class="arrow">▶</span></a
+                    >
+                    <ul class="subsubmenu">
+                      <li><a href="https://wa.me/51977842954?text=Hola,%20quiero%20optimizar%20el%20Hardware%20de%20mi%20computadora,%20%C2%BFme%20pueden%20ayudar%3F">Hardware</a></li>
+                      <li><a href="https://wa.me/51977842954?text=Hola,%20quiero%20optimizar%20el%20Software%20de%20mi%20computadora,%20%C2%BFme%20pueden%20ayudar%3F">Software</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#" onclick="toggleDropdown(event)"
+                      >Instalación <span class="arrow">▶</span></a
+                    >
+                    <ul class="subsubmenu">
+                      <li><a href="https://wa.me/51977842954?text=Hola,%20quiero%20instalar%20Microsoft%20Office%20en%20mi%20computadora,%20%C2%BFme%20pueden%20ayudar%3F">Microsoft Office</a></li>
+                      <li><a href="https://wa.me/51977842954?text=Hola,%20quiero%20instalar%20programas%20esenciales%20en%20mi%20computadora,%20%C2%BFme%20pueden%20ayudar%3F">Programas esenciales</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#" onclick="toggleDropdown(event)"
+                  >Laptops <span class="arrow">▶</span></a
+                >
+                <ul class="subsubmenu">
+                  <li class="dropdown">
+                    <a href="#" onclick="toggleDropdown(event)">Mantenimiento<span class="arrow">▶</span></a
+                    >
+                    <ul class="subsubmenu">
+                      <li><a href="https://wa.me/51977842954?text=Hola,%20mi%20laptop%20necesita%20mantenimiento%20preventivo,%20%C2%BFme%20pueden%20ayudar%3F">Preventivo</a></li>
+                      <li><a href="https://wa.me/51977842954?text=Hola,%20mi%20laptop%20necesita%20mantenimiento%20correctivo,%20%C2%BFme%20pueden%20ayudar%3F">Correctivo</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#" onclick="toggleDropdown(event)"
+                      >Optimizar <span class="arrow">▶</span></a
+                    >
+                    <ul class="subsubmenu">
+                      <li><a href="https://wa.me/51977842954?text=Hola,%20quiero%20optimizar%20el%20Hardware%20de%20mi%20laptop,%20%C2%BFme%20pueden%20ayudar%3F">Hardware</a></li>
+                      <li><a href="https://wa.me/51977842954?text=Hola,%20quiero%20optimizar%20el%20Software%20de%20mi%20laptop,%20%C2%BFme%20pueden%20ayudar%3F">Software</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#" onclick="toggleDropdown(event)"
+                      >Instalación <span class="arrow">▶</span></a
+                    >
+                    <ul class="subsubmenu">
+                      <li><a href="https://wa.me/51977842954?text=Hola,%20quiero%20instalar%20Microsoft%20Office%20en%20mi%20laptop,%20%C2%BFme%20pueden%20ayudar%3F">Microsoft Office</a></li>
+                      <li><a href="https://wa.me/51977842954?text=Hola,%20quiero%20instalar%20programas%20esenciales%20en%20mi%20laptop,%20%C2%BFme%20pueden%20ayudar%3F">Programas esenciales</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" onclick="toggleDropdown(event)"
+              >Contáctanos <span class="arrow">▶</span></a
+            >
+            <ul class="submenu">
+              <li>
+                <a
+                  href="https://wa.me/51977842954?text=Hola,%20quiero%20más%20información"
+                  >Whatsapp</a
+                >
+              </li>
+              <li><a href="https://www.facebook.com/profile.php?id=61575324759766">Facebook</a></li>
+            </ul>
+          </li>
+          <li><a href="#planes" id="btn-planes">Planes y Precios</a></li>
+          <li><a href="#" id="btn-consejos">Consejos</a></li>
+          <!-- Contenedor para mostrar los consejos -->
+          <div
+            id="consejos-container"
+            style="display: none; text-align: center; margin-top: 20px"
+          >
+            <h3>Consejo:</h3>
+            <p id="consejo-texto"></p>
+          </div>
+        </ul>
+      </div>
+    </div>
+
+    <main>
+      <section class="hero">
+        <h1>¿Tu computadora está lenta o fallando?</h1>
+        <p class="hero-sub">
+          Servicio técnico profesional en mantenimiento, reparación, optimización, armado de PC, redes, soporte remoto y más para computadoras y laptops.
+        </p>
+        <a
+          href="https://wa.me/51977842954?text=Hola,%20quiero%20asesoría%20técnica"
+          class="btn-wa-hero"
+          target="_blank"
+        >
+          Contáctanos por WhatsApp
+        </a>
+      </section>
+
+      <section class="servicios-rapidos">
+        <div class="service-card">
+          <span class="service-icon">🔧</span>
+          <h3>Mantenimiento Preventivo</h3>
+          <p>Limpieza y revisión general</p>
+        </div>
+        <div class="service-card">
+          <span class="service-icon">⚡</span>
+          <h3>Mantenimiento Correctivo</h3>
+          <p>Reparación de fallas</p>
+        </div>
+        <div class="service-card">
+          <span class="service-icon">🚀</span>
+          <h3>Optimización</h3>
+          <p>Hardware y Software</p>
+        </div>
+        <div class="service-card">
+          <span class="service-icon">📊</span>
+          <h3>Instalación de Office</h3>
+          <p>Office y programas esenciales</p>
+        </div>
+        <div class="service-card">
+          <span class="service-icon">🛡️</span>
+          <h3>Eliminación de Virus</h3>
+          <p>Limpieza de malware</p>
+        </div>
+        <div class="service-card">
+          <span class="service-icon">💡</span>
+          <h3>Asesoría Técnica</h3>
+          <p>Compra y actualización</p>
+        </div>
+        <div class="service-card">
+          <span class="service-icon">⬆️</span>
+          <h3>Actualización de Componentes</h3>
+          <p>RAM, SSD, GPU y más</p>
+        </div>
+        <div class="service-card">
+          <span class="service-icon">🖥️</span>
+          <h3>Armado de PC Personalizado</h3>
+          <p>Gamer, oficina, diseño</p>
+        </div>
+        <div class="service-card">
+          <span class="service-icon">🌐</span>
+          <h3>Soporte Remoto</h3>
+          <p>Asistencia en línea</p>
+        </div>
+        <div class="service-card">
+          <span class="service-icon">🏠</span>
+          <h3>Servicio a Domicilio</h3>
+          <p>Te atendemos en casa</p>
+        </div>
+        <div class="service-card">
+          <span class="service-icon">📶</span>
+          <h3>Redes y Cableado</h3>
+          <p>WiFi, routers, repetidores</p>
+        </div>
+        <div class="service-card">
+          <span class="service-icon">💽</span>
+          <h3>Migración HDD → SSD</h3>
+          <p>Clonación de discos</p>
+        </div>
+        <div class="service-card">
+          <span class="service-icon">🔑</span>
+          <h3>Recuperación de Contraseñas</h3>
+          <p>Windows, BIOS, cuentas</p>
+        </div>
+        <div class="service-card">
+          <span class="service-icon">🔄</span>
+          <h3>Formateo e Instalación de SO</h3>
+          <p>Windows limpio + drivers</p>
+        </div>
+      </section>
+
+      <section class="planes-section" id="planes">
+        <h2 class="section-title">Planes y Precios</h2>
+        <div class="planes-grid">
+          <div class="plan-card">
+            <h2>Básico</h2>
+            <p class="plan-precio">S/ 40</p>
+            <ul class="servicios">
+              <li>Limpieza física interna y externa</li>
+              <li>Revisión general del sistema</li>
+              <li>Optimización básica</li>
+            </ul>
+            <a href="https://wa.me/51977842954?text=Hola,%20quiero%20el%20plan%20básico%20de%20S/40" class="btn-wa" target="_blank">Contratar</a>
+          </div>
+          <div class="plan-card destacado">
+            <h2>Intermedio</h2>
+            <p class="plan-precio">S/ 70</p>
+            <ul class="servicios">
+              <li>Todo lo del plan básico</li>
+              <li>Formateo e instalación de sistema operativo</li>
+              <li>Instalación de drivers y programas esenciales</li>
+            </ul>
+            <a href="https://wa.me/51977842954?text=Hola,%20quiero%20el%20plan%20intermedio%20de%20S/70" class="btn-wa" target="_blank">Contratar</a>
+          </div>
+          <div class="plan-card">
+            <h2>Premium</h2>
+            <p class="plan-precio">S/ 120</p>
+            <ul class="servicios">
+              <li>Todo lo del plan intermedio</li>
+              <li>Respaldo y recuperación de datos</li>
+              <li>Soporte remoto durante 7 días</li>
+            </ul>
+            <a href="https://wa.me/51977842954?text=Hola,%20quiero%20el%20plan%20premium%20de%20S/120" class="btn-wa" target="_blank">Contratar</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonios-section">
+        <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+        <div class="testimonios-container">
+          <div class="testimonio-card" id="testimonio-actual">
+            <p class="testimonio-texto">"Excelente servicio, mi laptop quedó como nueva. Muy recomendados."</p>
+            <p class="testimonio-autor">— Carlos G.</p>
+          </div>
+          <div class="testimonios-controls">
+            <button class="testimonio-btn" onclick="cambiarTestimonio(-1)">◀ Anterior</button>
+            <button class="testimonio-btn" onclick="cambiarTestimonio(1)">Siguiente ▶</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="blog-section">
+        <h2 class="section-title">Consejos Técnicos</h2>
+        <div class="blog-grid" id="blog-grid">
+        </div>
+      </section>
+
+      <section class="calculadora-section">
+        <h2 class="section-title">Calculadora de Presupuesto</h2>
+        <p class="calculadora-desc">Selecciona los servicios que necesitas y calcula un presupuesto estimado.</p>
+        <div class="calculadora-container">
+          <div class="calculadora-servicios">
+            <label><input type="checkbox" data-precio="25" onchange="calcularPresupuesto()"> Mantenimiento Preventivo — S/25</label>
+            <label><input type="checkbox" data-precio="35" onchange="calcularPresupuesto()"> Mantenimiento Correctivo — S/35</label>
+            <label><input type="checkbox" data-precio="20" onchange="calcularPresupuesto()"> Optimización — S/20</label>
+            <label><input type="checkbox" data-precio="15" onchange="calcularPresupuesto()"> Instalación de Office — S/15</label>
+            <label><input type="checkbox" data-precio="30" onchange="calcularPresupuesto()"> Eliminación de Virus — S/30</label>
+            <label><input type="checkbox" data-precio="40" onchange="calcularPresupuesto()"> Formateo e Instalación de SO — S/40</label>
+            <label><input type="checkbox" data-precio="20" onchange="calcularPresupuesto()"> Actualización de Componentes — S/20</label>
+            <label><input type="checkbox" data-precio="50" onchange="calcularPresupuesto()"> Armado de PC Personalizado — S/50</label>
+            <label><input type="checkbox" data-precio="25" onchange="calcularPresupuesto()"> Soporte Remoto — S/25</label>
+            <label><input type="checkbox" data-precio="30" onchange="calcularPresupuesto()"> Migración HDD → SSD — S/30</label>
+            <label><input type="checkbox" data-precio="15" onchange="calcularPresupuesto()"> Recuperación de Contraseñas — S/15</label>
+          </div>
+          <div class="calculadora-resultado">
+            <p>Total estimado: <strong id="total-presupuesto">S/ 0</strong></p>
+            <a href="#" id="btn-cotizar-wa" class="btn-wa" target="_blank">Solicitar por WhatsApp</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="contacto-section">
+        <h2 class="section-title">Contáctanos</h2>
+        <form class="contacto-form" id="contacto-form">
+          <input type="text" id="contacto-nombre" placeholder="Tu nombre" required>
+          <input type="email" id="contacto-email" placeholder="Tu correo electrónico">
+          <textarea id="contacto-mensaje" placeholder="Describe tu problema o consulta..." rows="5" required></textarea>
+          <button type="submit" class="btn-wa">Enviar por WhatsApp</button>
+        </form>
+      </section>
+
+      <header class="header">
+        <div class="presentacion-box">
+          <h1>Dr.Computer</h1>
+          <h2>¿Quiénes somos?</h2>
+          <p class="text-center">
+            En Dr.Computer nos especializamos en el mantenimiento preventivo y
+            correctivo de computadoras y laptops, asegurando que tus equipos
+            funcionen de manera óptima y prolongando su vida útil.
+          </p>
+          <p class="text-center">
+            Nuestro compromiso es brindarte soluciones rápidas, eficientes y
+            personalizadas, adaptándonos a tus necesidades y presupuesto.
+          </p>
+          <p class="text-center">Contamos con experiencia en:</p>
+          <ul class="servicios">
+            <li>Limpieza profunda de hardware</li>
+            <li>Eliminación de virus y malware</li>
+            <li>Optimización de sistemas operativos</li>
+            <li>Actualización de componentes (RAM, SSD, GPU)</li>
+            <li>Armado de PC personalizado</li>
+            <li>Instalación de Microsoft Office y programas</li>
+            <li>Formateo e instalación de sistema operativo</li>
+            <li>Migración de HDD a SSD y clonación</li>
+            <li>Soporte remoto y servicio a domicilio</li>
+            <li>Redes, WiFi y cableado estructurado</li>
+            <li>Recuperación de contraseñas</li>
+            <li>Asesoría técnica especializada</li>
+          </ul>
+          <p class="text-center">
+            Ya sea que tu equipo necesite una mejora de rendimiento o una
+            reparación urgente, en Dr.Computer estamos listos para ayudarte con un
+            servicio confiable y profesional.
+          </p>
+        </div>
+      </header>
+    </main>
+
+    <footer>
+      <div class="copyright">
+        Copyright © 2025 - Derechos Reservados Programador Web: Cossio Torres
+        Brayan Ricardo D.C.
+      </div>
+    </footer>
+    <script src="../js/script.js" defer></script>
+  </body>
+</html>
