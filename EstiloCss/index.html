@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagen Profesional para tu Negocio</title>
+    <link rel="icon" type="image/png" href="Trabajos/icono.png">
+    <script>
+        document.addEventListener('contextmenu', e => { e.preventDefault(); alert('No no no...'); return false; });
+        document.addEventListener('keydown', e => {
+            if (e.key === 'F12' ||
+                (e.ctrlKey && e.shiftKey && ['I','J','C'].includes(e.key.toUpperCase())) ||
+                (e.ctrlKey && e.key.toLowerCase() === 'u') ||
+                e.key === 'PrintScreen') {
+                e.preventDefault();
+                alert('No no no...');
+                return false;
+            }
+        });
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #e2b714;
+            --accent-hover: #f0c929;
+            --text: #f0f0f0;
+            --text-dark: #1a1a2e;
+            --bg-light: #f8f9fa;
+            --bg-card: #ffffff;
+            --shadow: 0 4px 20px rgba(0,0,0,0.08);
+            --radius: 16px;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, rgba(26,26,46,0.6) 0%, rgba(22,33,62,0.65) 100%), url('img/fondo titulo.jpg') center / cover no-repeat;
+            color: var(--text);
+            padding: 100px 0 70px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 50%, rgba(226,183,20,0.06) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .hero h1 { font-size: 3.2rem; font-weight: 800; margin-bottom: 16px; position: relative; line-height: 1.2; }
+        .hero h1 span { color: var(--accent); }
+        .hero p { font-size: 1.25rem; opacity: 0.9; max-width: 680px; margin: 0 auto 36px; position: relative; }
+        .hero .cta {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--text-dark);
+            padding: 14px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.2s;
+            position: relative;
+        }
+        .hero .cta:hover { background: var(--accent-hover); transform: translateY(-2px); }
+
+        /* SECTIONS */
+        section { padding: 72px 0; }
+        section:nth-child(even) { background: var(--bg-light); }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.9rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: var(--primary);
+        }
+        .section-sub {
+            text-align: center;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 48px;
+            font-size: 1.05rem;
+        }
+
+        /* PHILOSOPHY */
+        .philosophy-box {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--text);
+            padding: 48px 40px;
+            border-radius: var(--radius);
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+        .philosophy-box blockquote {
+            font-size: 1.35rem;
+            font-style: italic;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+        .philosophy-box blockquote::before { content: '\201C'; font-size: 3rem; color: var(--accent); display: block; margin-bottom: -10px; }
+        .philosophy-box .author { margin-top: 20px; font-size: 0.9rem; opacity: 0.7; }
+
+        /* SERVICES */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+        }
+        .service-card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 36px 28px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .service-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
+        .service-icon { font-size: 2.5rem; margin-bottom: 16px; }
+        .service-card h3 { font-size: 1.25rem; margin-bottom: 10px; color: var(--primary); }
+        .service-card p { color: #555; font-size: 0.95rem; }
+        .service-card ul { margin-top: 12px; list-style: none; }
+        .service-card ul li { padding: 4px 0; color: #555; font-size: 0.92rem; }
+        .service-card ul li::before { content: '✓ '; color: var(--accent); font-weight: 700; }
+
+        /* PRICING */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            align-items: start;
+        }
+        .pricing-card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 36px 28px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .pricing-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
+        .pricing-card.featured {
+            border: 2px solid var(--accent);
+            transform: scale(1.03);
+        }
+        .pricing-card.featured:hover { transform: scale(1.03) translateY(-4px); }
+        .pricing-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: var(--text-dark);
+            padding: 4px 20px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .pricing-card .emoji-big { font-size: 2.2rem; margin-bottom: 8px; }
+        .pricing-card h3 { font-size: 1.3rem; color: var(--primary); margin-bottom: 4px; }
+        .pricing-card .price {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 16px 0;
+        }
+        .pricing-card .price span { font-size: 1rem; font-weight: 400; color: #888; }
+        .pricing-card ul { list-style: none; text-align: left; margin: 20px 0; }
+        .pricing-card ul li { padding: 6px 0; border-bottom: 1px solid #eee; font-size: 0.92rem; color: #444; }
+        .pricing-card ul li:last-child { border: none; }
+        .pricing-card ul li::before { content: '✓ '; color: var(--accent); font-weight: 700; }
+        .pricing-card .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: #fff;
+            padding: 12px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        .pricing-card .btn:hover { background: #2a2a4e; }
+        .pricing-card.featured .btn { background: var(--accent); color: var(--text-dark); }
+        .pricing-card.featured .btn:hover { background: var(--accent-hover); }
+
+        /* EXTRAS TABLE */
+        .extras-table {
+            width: 100%;
+            max-width: 650px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        .extras-table th, .extras-table td {
+            padding: 14px 20px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        .extras-table th {
+            background: var(--primary);
+            color: var(--text);
+            font-weight: 600;
+        }
+        .extras-table tr:last-child td { border: none; }
+        .extras-table td:last-child { font-weight: 600; color: var(--primary); text-align: right; }
+
+        /* WORKFLOW */
+        .workflow-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+            counter-reset: step;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .workflow-step {
+            background: var(--bg-card);
+            padding: 24px 16px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            counter-increment: step;
+            font-size: 0.92rem;
+            color: #444;
+        }
+        .workflow-step::before {
+            content: counter(step);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: var(--text-dark);
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+
+        /* CORRECTIONS vs REDESIGN */
+        .compare-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .compare-card {
+            padding: 32px 28px;
+            border-radius: var(--radius);
+        }
+        .compare-card.good { background: #e8f5e9; border-left: 4px solid #4caf50; }
+        .compare-card.bad { background: #fbe9e7; border-left: 4px solid #ff5722; }
+        .compare-card h4 { font-size: 1.1rem; margin-bottom: 12px; }
+        .compare-card.good h4 { color: #2e7d32; }
+        .compare-card.bad h4 { color: #bf360c; }
+        .compare-card ul { list-style: none; }
+        .compare-card ul li { padding: 4px 0; font-size: 0.92rem; color: #444; }
+        .compare-card.good ul li::before { content: '✅ '; }
+        .compare-card.bad ul li::before { content: '⚠️ '; }
+
+        /* PORTFOLIO */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+}
+.portfolio-project {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+.portfolio-project:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
+.portfolio-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+}
+.portfolio-images img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+.portfolio-images .img-wrap { display: block; overflow: hidden; }
+.portfolio-images .img-wrap:hover img { transform: scale(1.08); }
+.portfolio-images .full-width { grid-column: 1 / -1; }
+.portfolio-info {
+    padding: 20px 24px;
+}
+.portfolio-info h3 { font-size: 1.1rem; color: var(--primary); margin-bottom: 4px; }
+.portfolio-info p { font-size: 0.9rem; color: #666; }
+
+/* LIGHTBOX */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.92);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+.lightbox.active { display: flex; }
+.lightbox-close {
+    position: absolute;
+    top: 20px; right: 30px;
+    color: #fff;
+    font-size: 2.2rem;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    background: none;
+    border: none;
+    z-index: 10;
+}
+.lightbox-close:hover { opacity: 1; }
+.lightbox-img {
+    max-width: 90vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 8px;
+    user-select: none;
+}
+.lightbox-counter {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255,255,255,0.6);
+    font-size: 0.95rem;
+}
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    border: none;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+.lightbox-nav:hover { background: rgba(255,255,255,0.25); }
+.lightbox-prev { left: 20px; }
+.lightbox-next { right: 20px; }
+
+@media (max-width: 768px) {
+    .portfolio-images img { height: 150px; }
+    .lightbox-nav { width: 44px; height: 44px; font-size: 1.3rem; }
+    .lightbox-prev { left: 8px; }
+    .lightbox-next { right: 8px; }
+    .lightbox-close { top: 12px; right: 16px; font-size: 1.8rem; }
+}
+
+        /* CTA BANNER */
+        .cta-section {
+            background: var(--bg-light);
+            color: #333;
+            text-align: center;
+            padding: 64px 0;
+        }
+        .cta-section h2 { font-size: 1.8rem; margin-bottom: 12px; color: #222; }
+        .cta-section p { opacity: 1; font-size: 1.05rem; margin-bottom: 28px; color: #444; }
+        .cta-section .cta-button {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--text-dark);
+            padding: 14px 44px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .cta-section .cta-button:hover { background: var(--accent-hover); transform: translateY(-2px); }
+
+        /* FOOTER */
+        footer {
+            background: #0f0f1a;
+            color: rgba(255,255,255,0.6);
+            text-align: center;
+            padding: 32px 0;
+            font-size: 0.9rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero { padding: 60px 0 40px; }
+            section { padding: 48px 0; }
+            .pricing-card.featured { transform: none; }
+            .pricing-card.featured:hover { transform: translateY(-4px); }
+            .compare-grid { grid-template-columns: 1fr; }
+            .philosophy-box { padding: 32px 24px; }
+            .philosophy-box blockquote { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="container">
+        <h1>Tu negocio merece una <span>imagen profesional</span></h1>
+        <p>Ayudo a emprendedores y negocios locales a tener una presentación que genere confianza y atraiga más clientes. Diseño rápido, atractivo y económico.</p>
+        <a href="#contacto" class="cta">Solicitar información</a>
+    </div>
+</header>
+
+<section>
+    <div class="container">
+        <div class="philosophy-box">
+            <blockquote>
+                Ayudo a que tu negocio tenga una imagen profesional para generar más confianza.
+            </blockquote>
+            <div class="author">— Diseño gráfico para emprendedores</div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2 class="section-title">Servicios</h2>
+        <p class="section-sub">Soluciones rápidas y profesionales para tu negocio</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🪪</div>
+                <h3>Tarjetas de presentación</h3>
+                <p>Diseño profesional listo para impresión. Incluye frente, reverso, datos de contacto, QR, redes sociales y más.</p>
+                <ul>
+                    <li>Frente y reverso</li>
+                    <li>Código QR</li>
+                    <li>Redes sociales</li>
+                    <li>Logo y fotografías</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🖼️</div>
+                <h3>Banners para redes</h3>
+                <p>Perfectos para WhatsApp, Facebook e Instagram. Promociones, descuentos, productos y más.</p>
+                <ul>
+                    <li>Estado de WhatsApp</li>
+                    <li>Publicaciones Facebook</li>
+                    <li>Historias Instagram</li>
+                    <li>Código QR incluido</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">✨</div>
+                <h3>Diseño / Adaptación de Logo</h3>
+                <p>Desde mejorar tu logo actual hasta crear uno nuevo. Adaptación para perfiles, fondo transparente, ajustes de color.</p>
+                <ul>
+                    <li>Mejora de resolución</li>
+                    <li>Fondo transparente</li>
+                    <li>Perfiles sociales</li>
+                    <li>Logo desde cero (cotización)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2 class="section-title">Planes</h2>
+        <p class="section-sub">Elige el paquete que mejor se adapte a tu negocio</p>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="emoji-big">🥈</div>
+                <h3>Plata</h3>
+                <div class="price">S/20 <span>soles</span></div>
+                <p style="color:#666;font-size:0.9rem;">Ideal para quienes solo necesitan lo básico</p>
+                <ul>
+                    <li>Tarjeta frente y reverso</li>
+                    <li>Código QR</li>
+                    <li>Información de contacto</li>
+                    <li>Hasta 2 correcciones</li>
+                </ul>
+                <a href="https://wa.me/51977842954?text=Quiero%20el%20plan%20Plata" target="_blank" class="btn">Lo quiero</a>
+            </div>
+            <div class="pricing-card featured">
+                <div class="pricing-badge">Más recomendado</div>
+                <div class="emoji-big">🥇</div>
+                <h3>Oro ⭐</h3>
+                <div class="price">S/30 <span>soles</span></div>
+                <p style="color:#666;font-size:0.9rem;">El paquete principal y más popular</p>
+                <ul>
+                    <li>Tarjeta frente y reverso</li>
+                    <li>Banner para WhatsApp</li>
+                    <li>Adaptación del logo para perfil</li>
+                    <li>Código QR + Redes sociales</li>
+                    <li>Hasta 4 correcciones</li>
+                </ul>
+                <a href="https://wa.me/51977842954?text=Quiero%20el%20plan%20Oro" target="_blank" class="btn">Lo quiero</a>
+            </div>
+            <div class="pricing-card">
+                <div class="emoji-big">💎</div>
+                <h3>Platinum</h3>
+                <div class="price">S/45–50 <span>soles</span></div>
+                <p style="color:#666;font-size:0.9rem;">Presentación completa y profesional</p>
+                <ul>
+                    <li>Todo lo del paquete Oro</li>
+                    <li>Mockups de presentación</li>
+                    <li>Versiones para impresión</li>
+                    <li>Versiones para redes sociales</li>
+                    <li>Atención prioritaria</li>
+                    <li>Hasta 6 correcciones</li>
+                </ul>
+                <a href="https://wa.me/51977842954?text=Quiero%20el%20plan%20Platinum" target="_blank" class="btn">Lo quiero</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2 class="section-title">Servicios adicionales</h2>
+        <p class="section-sub">Extras que puedes agregar a tu pedido</p>
+        <table class="extras-table">
+            <thead>
+                <tr>
+                    <th>Servicio</th>
+                    <th>Precio sugerido</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Cambios mayores</td><td>Desde S/5</td></tr>
+                <tr><td>Nuevo banner adicional</td><td>Desde S/10</td></tr>
+                <tr><td>Segunda tarjeta diferente</td><td>Desde S/10</td></tr>
+                <tr><td>Entrega urgente</td><td>+20% a +50%</td></tr>
+                <tr><td>Diseño de logo desde cero</td><td>Cotización independiente</td></tr>
+                <tr><td>Rediseño completo</td><td>Cotización independiente</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2 class="section-title">Corrección vs Rediseño</h2>
+        <p class="section-sub">Para que tengas claro qué está incluido y qué no</p>
+        <div class="compare-grid">
+            <div class="compare-card good">
+                <h4>Correcciones (incluidas)</h4>
+                <p style="font-size:0.9rem;color:#444;margin-bottom:10px;">Cambios pequeños sin costo adicional</p>
+                <ul>
+                    <li>Corregir un número o palabra</li>
+                    <li>Cambiar un ícono</li>
+                    <li>Ajustar tamaño</li>
+                    <li>Cambiar una fotografía</li>
+                    <li>Corregir ortografía</li>
+                </ul>
+            </div>
+            <div class="compare-card bad">
+                <h4>Rediseño (con costo)</h4>
+                <p style="font-size:0.9rem;color:#444;margin-bottom:10px;">Cambios que implican rehacer el concepto</p>
+                <ul>
+                    <li>Cambiar todos los colores</li>
+                    <li>Rehacer la distribución</li>
+                    <li>Cambiar completamente el estilo</li>
+                    <li>Agregar muchos elementos nuevos</li>
+                    <li>Cambiar info cuando ya estaba terminado</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2 class="section-title">Cómo trabajamos</h2>
+        <p class="section-sub">Un proceso simple y transparente</p>
+        <div class="workflow-steps">
+            <div class="workflow-step">Solicitas información</div>
+            <div class="workflow-step">Recibes el formulario</div>
+            <div class="workflow-step">Confirmamos datos</div>
+            <div class="workflow-step">Iniciamos diseño</div>
+            <div class="workflow-step">Vista previa</div>
+            <div class="workflow-step">Correcciones</div>
+            <div class="workflow-step">Entrega final</div>
+        </div>
+    </div>
+</section>
+
+<section id="portafolio">
+    <div class="container">
+        <h2 class="section-title">Trabajos recientes</h2>
+        <p class="section-sub">Algunos diseños que he realizado para emprendedores como tú</p>
+        <div class="portfolio-grid" id="portfolioGrid"></div>
+    </div>
+</section>
+
+<div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">&times;</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev">&lt;</button>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext">&gt;</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="">
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+</div>
+
+<section id="contacto" class="cta-section">
+    <div class="container">
+        <h2>¿Listo para darle una imagen profesional a tu negocio?</h2>
+        <p>Contáctame y recibe toda la información para empezar.</p>
+        <a href="https://wa.me/51977842954" target="_blank" class="cta-button">Escribir por WhatsApp</a>
+        <p style="margin-top:16px;font-size:0.9rem;color:#666;">Responde en menos de 24 horas</p>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>Diseño gráfico profesional para emprendedores y negocios locales.</p>
+    </div>
+</footer>
+
+<script>
+const proyectos = [
+    {
+        nombre: 'Sussy y Jacob',
+        descripcion: 'Tarjetas de presentación + Logo',
+        imagenes: [
+            'Trabajos/TSussi/Sussy y Jacob.png',
+            'Trabajos/TSussi/Sussy y Jacob 2.png',
+            'Trabajos/TSussi/WhatsApp Image 2026-06-27 at 17.36.22.jpeg',
+            'Trabajos/TSussi/WhatsApp Image 2026-06-27 at 17.36.22 (1).jpeg'
+        ]
+    },
+    {
+        nombre: 'Lorena',
+        descripcion: 'Tarjetas de presentación + Banner + Logo',
+        imagenes: [
+            'Trabajos/TLorena/adelante.png',
+            'Trabajos/TLorena/atras.png',
+            'Trabajos/TLorena/baner.png',
+            'Trabajos/TLorena/logo.png'
+        ]
+    },
+    {
+        nombre: 'Brayan',
+        descripcion: 'Tarjeta de presentación',
+        imagenes: [
+            'Trabajos/TBrayan/brayan.jpg',
+            'Trabajos/TBrayan/icono.png'
+        ]
+    },
+    {
+        nombre: 'EstiloCss',
+        descripcion: 'Branding personal',
+        imagenes: [
+            'Trabajos/EstiloCss/tarjeta-adelante.png',
+            'Trabajos/EstiloCss/tarjeta-atras.png',
+            'Trabajos/EstiloCss/logo.png',
+            'Trabajos/EstiloCss/icono.png'
+        ]
+    }
+];
+
+const grid = document.getElementById('portfolioGrid');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxCounter = document.getElementById('lightboxCounter');
+const lightboxClose = document.getElementById('lightboxClose');
+const lightboxPrev = document.getElementById('lightboxPrev');
+const lightboxNext = document.getElementById('lightboxNext');
+
+let currentProject = null;
+let currentIndex = 0;
+
+function renderPortfolio() {
+    grid.innerHTML = '';
+    proyectos.forEach((proyecto, pIdx) => {
+        const card = document.createElement('div');
+        card.className = 'portfolio-project';
+        const singleProj = proyecto.imagenes.length === 1;
+        const imagesHtml = proyecto.imagenes.map((img, i) => {
+            return `<span class="img-wrap${singleProj ? ' full-width' : ''}" data-project="${pIdx}" data-index="${i}"><img src="${img}" alt="${proyecto.nombre}" loading="lazy"></span>`;
+        }).join('');
+        card.innerHTML = `
+            <div class="portfolio-images">
+                ${imagesHtml}
+            </div>
+            <div class="portfolio-info">
+                <h3>${proyecto.nombre}</h3>
+                <p>${proyecto.descripcion}</p>
+            </div>
+        `;
+        grid.appendChild(card);
+    });
+
+    document.querySelectorAll('.portfolio-images .img-wrap').forEach(el => {
+        el.addEventListener('click', function (e) {
+            const pIdx = parseInt(this.dataset.project);
+            const iIdx = parseInt(this.dataset.index);
+            openLightbox(pIdx, iIdx);
+        });
+    });
+}
+
+function openLightbox(projectIdx, imageIdx) {
+    currentProject = projectIdx;
+    currentIndex = imageIdx;
+    updateLightbox();
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function updateLightbox() {
+    const project = proyectos[currentProject];
+    lightboxImg.src = project.imagenes[currentIndex];
+    lightboxImg.alt = project.nombre;
+    lightboxCounter.textContent = `${currentIndex + 1} / ${project.imagenes.length} — ${project.nombre}`;
+}
+
+function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+function prevImage() {
+    const project = proyectos[currentProject];
+    currentIndex = (currentIndex - 1 + project.imagenes.length) % project.imagenes.length;
+    updateLightbox();
+}
+
+function nextImage() {
+    const project = proyectos[currentProject];
+    currentIndex = (currentIndex + 1) % project.imagenes.length;
+    updateLightbox();
+}
+
+lightboxClose.addEventListener('click', closeLightbox);
+lightboxPrev.addEventListener('click', prevImage);
+lightboxNext.addEventListener('click', nextImage);
+
+lightbox.addEventListener('click', function (e) {
+    if (e.target === this) closeLightbox();
+});
+
+document.addEventListener('keydown', function (e) {
+    if (!lightbox.classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') prevImage();
+    if (e.key === 'ArrowRight') nextImage();
+});
+
+renderPortfolio();
+</script>
+</body>
+</html>
