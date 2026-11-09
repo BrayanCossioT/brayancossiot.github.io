@@ -1,0 +1,643 @@
+/* ==================================================================
+   Flores para Anais — estilos de la portada y ajustes de la escena
+   (la escena en sí vive en css/main.css)
+   ================================================================== */
+
+:root {
+  --amarillo: #ffd93b;
+  --amarillo-fuerte: #ffb703;
+  --crema: #ffe89a;
+  --blanco-calido: #fffdf5;
+  --serif: Georgia, "Times New Roman", "Book Antiqua", serif;
+  --sans: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ------------------------------------------------------------------
+   Portada
+   ------------------------------------------------------------------ */
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background:
+    radial-gradient(circle at 50% 38%, rgba(255, 183, 3, 0.09) 0%, transparent 55%),
+    radial-gradient(circle at 50% 50%, #0b1412 0%, #000 72%);
+  transition: opacity 1.2s ease, visibility 1.2s ease;
+}
+
+body.iniciado .intro {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.intro__contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: subir 1.4s ease both;
+}
+
+@keyframes subir {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Las letras del saludo no se congelan con .precarga */
+.precarga .intro *,
+.precarga .intro *::before,
+.precarga .intro *::after {
+  animation-play-state: running !important;
+}
+
+.intro__saludo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  margin: 0 0 26px;
+  font-size: clamp(2.6rem, 9vw, 5.2rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+}
+
+.intro__saludo > span {
+  display: inline-block;
+  animation: brillo 2.8s ease-in-out infinite;
+  animation-delay: calc(var(--i, 0) * 0.13s);
+}
+
+.intro__espacio {
+  width: 0.35em;
+  animation: none !important;
+}
+
+@keyframes brillo {
+  0%,
+  100% {
+    color: #fff;
+    text-shadow:
+      0 0 10px var(--amarillo),
+      0 0 32px var(--amarillo-fuerte),
+      0 0 80px rgba(255, 158, 0, 0.65);
+  }
+  45%,
+  55% {
+    color: #e9d79b;
+    text-shadow: 0 0 4px rgba(255, 217, 59, 0.25);
+  }
+}
+
+.intro__texto {
+  margin: 0 0 30px;
+  color: rgba(255, 253, 245, 0.78);
+  font-size: clamp(0.95rem, 2.2vw, 1.15rem);
+  font-weight: 300;
+  letter-spacing: 0.08em;
+}
+
+.intro__boton {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 30px;
+  border: 1px solid rgba(255, 217, 59, 0.55);
+  border-radius: 999px;
+  background: rgba(255, 217, 59, 0.08);
+  color: var(--crema);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  transition:
+    background 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.35s ease;
+  animation: latido 3s ease-in-out infinite;
+}
+
+.intro__boton:hover,
+.intro__boton:focus-visible {
+  background: rgba(255, 217, 59, 0.18);
+  box-shadow: 0 12px 34px rgba(255, 183, 3, 0.28);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.intro__boton:active {
+  transform: translateY(0) scale(0.98);
+}
+
+@keyframes latido {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 217, 59, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 0 14px rgba(255, 217, 59, 0);
+  }
+}
+
+.intro__flor {
+  font-size: 1.15em;
+  line-height: 1;
+}
+
+.intro__nota {
+  margin: 22px 0 0;
+  color: rgba(255, 253, 245, 0.42);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+}
+
+/* ------------------------------------------------------------------
+   Dedicatoria
+   ------------------------------------------------------------------ */
+.titulo {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1.2s ease;
+  top: auto;
+  bottom: 16vh;
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(92vw, 860px);
+  margin: 0;
+  padding: 0;
+  font-family: var(--serif);
+  font-size: clamp(0.98rem, 1.55vw, 1.32rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.95;
+  letter-spacing: 0.055em;
+  color: var(--crema);
+  text-align: center;
+  text-shadow:
+    0 0 20px rgba(255, 183, 3, 0.35),
+    0 2px 12px rgba(0, 0, 0, 0.95);
+}
+
+.titulo.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ------------------------------------------------------------------
+   Mensajes sincronizados con la canción
+   ------------------------------------------------------------------ */
+#lyrics {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 5.5vh;
+  bottom: auto;
+  transform: translateX(-50%);
+  width: min(90vw, 800px);
+  margin: 0;
+  padding: 0;
+  font-family: var(--sans);
+  font-size: clamp(1rem, 2.05vw, 1.62rem);
+  font-weight: 500;
+  line-height: 1.65;
+  letter-spacing: 0.13em;
+  color: var(--blanco-calido);
+  text-align: center;
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.95),
+    0 0 10px rgba(0, 0, 0, 0.9),
+    0 0 26px rgba(0, 0, 0, 0.85);
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  pointer-events: none;
+}
+
+#lyrics.visible {
+  opacity: 1;
+}
+
+/* ------------------------------------------------------------------
+   Pétalos que caen
+   ------------------------------------------------------------------ */
+.petalos {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.petalo {
+  position: absolute;
+  top: -10vh;
+  width: var(--s);
+  height: calc(var(--s) * 0.72);
+  border-radius: 62% 38% 55% 45% / 66% 56% 44% 34%;
+  background: linear-gradient(135deg, var(--petalo-a), var(--petalo-b));
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: caer var(--dur) linear var(--delay) infinite;
+}
+
+@keyframes caer {
+  0% {
+    transform: translate3d(0, -10vh, 0) rotate(0deg);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.8;
+  }
+  88% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate3d(var(--deriva), 112vh, 0) rotate(var(--giro));
+    opacity: 0;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Botón de música
+   ------------------------------------------------------------------ */
+.btn-audio {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 400;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid rgba(255, 217, 59, 0.35);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.45);
+  color: var(--amarillo);
+  cursor: pointer;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-audio:hover,
+.btn-audio:focus-visible {
+  background: rgba(255, 217, 59, 0.14);
+  border-color: rgba(255, 217, 59, 0.7);
+  transform: scale(1.06);
+  outline: none;
+}
+
+.btn-audio[hidden] {
+  display: none;
+}
+
+.icono {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.btn-audio .icono--play {
+  display: none;
+  margin-left: 2px;
+}
+
+.btn-audio.pausado .icono--pausa {
+  display: none;
+}
+
+.btn-audio.pausado .icono--play {
+  display: block;
+}
+
+/* ------------------------------------------------------------------
+   Aviso (por ejemplo, si el audio no se puede reproducir)
+   ------------------------------------------------------------------ */
+.aviso {
+  position: fixed;
+  left: 50%;
+  bottom: 84px;
+  transform: translateX(-50%);
+  z-index: 450;
+  margin: 0;
+  padding: 10px 18px;
+  border: 1px solid rgba(255, 217, 59, 0.3);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.7);
+  color: var(--crema);
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
+  text-align: center;
+  transition: opacity 0.6s ease;
+}
+
+.aviso[hidden] {
+  display: none;
+}
+
+/* ------------------------------------------------------------------
+   Sin JavaScript
+   ------------------------------------------------------------------ */
+.sin-js {
+  position: fixed;
+  inset: 0;
+  z-index: 600;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 24px;
+  background: #000;
+  color: var(--crema);
+  text-align: center;
+}
+
+/* ------------------------------------------------------------------
+   Móvil
+   ------------------------------------------------------------------ */
+@media (max-width: 700px) {
+  .titulo {
+    top: 25vh;
+    bottom: auto;
+    width: 94vw;
+    font-size: clamp(0.8rem, 3.3vw, 1rem);
+    line-height: 1.75;
+    letter-spacing: 0.035em;
+  }
+
+  #lyrics {
+    top: 4vh;
+    bottom: auto;
+    width: 92vw;
+    font-size: clamp(0.95rem, 4vw, 1.2rem);
+    letter-spacing: 0.07em;
+  }
+
+  .intro__texto {
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+  }
+
+  .intro__boton {
+    padding: 13px 26px;
+    font-size: 0.92rem;
+  }
+
+  .btn-audio {
+    right: 12px;
+    bottom: 12px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .aviso {
+    bottom: 66px;
+    width: calc(100vw - 48px);
+    border-radius: 16px;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Paletas de color de la escena
+   js/app.js cambia data-paleta en el <body> cada cierto tiempo.
+   Los valores base son la paleta amarilla (la de siempre).
+   ------------------------------------------------------------------ */
+:root {
+  --petalo: #fddd25;
+  --petalo-brillo: #fff;
+  --petalo-sombra: #7c6901;
+  --petalo-a: rgb(255, 235, 18);
+  --petalo-b: rgb(255, 206, 0);
+  --brillo-flor: #f9fd25;
+
+  --tallo: #2f8f3a;
+  --tallo-claro: #3fa04a;
+  --tallo-medio: #6cc75e;
+  --tallo-sombra: #1f6b2c;
+  --tallo-trans: rgba(31, 107, 44, 0.4);
+  --tallo-glow: hsla(122deg, 45%, 50%, 0.2);
+
+  --hoja: #4fbf3d;
+  --hoja-sombra: #2a8a24;
+  --hoja-brillo: #9be08a;
+
+  --luciernaga: rgb(255, 251, 0);
+  --luciernaga-2: #ffd24a;
+
+  --cielo-brillo: rgba(255, 226, 95, 0.22);
+  --cielo-linea: rgb(0, 255, 250);
+}
+
+body[data-paleta="rosa"] {
+  --petalo: #ff9fc2;
+  --petalo-brillo: #fff;
+  --petalo-sombra: #8c2f52;
+  --petalo-a: rgb(255, 158, 190);
+  --petalo-b: rgb(232, 88, 138);
+  --brillo-flor: #ff9fc2;
+
+
+
+  --luciernaga: rgb(255, 220, 235);
+  --luciernaga-2: #ffd6e8;
+
+  --cielo-brillo: rgba(255, 152, 192, 0.22);
+  --cielo-linea: rgb(255, 150, 185);
+}
+
+body[data-paleta="lila"] {
+  --petalo: #c9a7ff;
+  --petalo-brillo: #fff;
+  --petalo-sombra: #5b3b8c;
+  --petalo-a: rgb(214, 184, 255);
+  --petalo-b: rgb(150, 100, 230);
+  --brillo-flor: #c9a7ff;
+
+
+
+  --luciernaga: rgb(235, 220, 255);
+  --luciernaga-2: #c9a7ff;
+
+  --cielo-brillo: rgba(206, 176, 255, 0.22);
+  --cielo-linea: rgb(180, 140, 255);
+}
+
+body[data-paleta="luna"] {
+  --petalo: #f2f5ff;
+  --petalo-brillo: #fff;
+  --petalo-sombra: #8e97ad;
+  --petalo-a: rgb(246, 249, 255);
+  --petalo-b: rgb(200, 212, 235);
+  --brillo-flor: #dfe9ff;
+
+
+
+  --luciernaga: rgb(235, 245, 255);
+  --luciernaga-2: #e6eeff;
+
+  --cielo-brillo: rgba(200, 225, 255, 0.22);
+  --cielo-linea: rgb(190, 220, 255);
+}
+
+body[data-paleta="hielo"] {
+  --petalo: #9fe3ff;
+  --petalo-brillo: #fff;
+  --petalo-sombra: #2f6f8c;
+  --petalo-a: rgb(180, 235, 255);
+  --petalo-b: rgb(90, 180, 240);
+  --brillo-flor: #9fe3ff;
+
+
+
+  --luciernaga: rgb(200, 245, 255);
+  --luciernaga-2: #cfefff;
+
+  --cielo-brillo: rgba(150, 220, 255, 0.22);
+  --cielo-linea: rgb(120, 220, 255);
+}
+
+body[data-paleta="atardecer"] {
+  --petalo: #ffb066;
+  --petalo-brillo: #fff;
+  --petalo-sombra: #8c4a1a;
+  --petalo-a: rgb(255, 186, 110);
+  --petalo-b: rgb(245, 120, 60);
+  --brillo-flor: #ffb066;
+
+
+
+  --luciernaga: rgb(255, 225, 180);
+  --luciernaga-2: #ffc48a;
+
+  --cielo-brillo: rgba(255, 176, 118, 0.22);
+  --cielo-linea: rgb(255, 170, 120);
+}
+
+/* ------------------------------------------------------------------
+   Destello del cambio de paleta
+   ------------------------------------------------------------------ */
+.destello {
+  position: fixed;
+  inset: -10%;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 50% 60%,
+    rgba(255, 248, 220, 0.75),
+    rgba(255, 220, 140, 0.25) 38%,
+    transparent 70%
+  );
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+.destello.activo {
+  animation: destello 1s ease-out;
+}
+
+@keyframes destello {
+  0% {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  25% {
+    opacity: 0.38;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.08);
+  }
+}
+
+/* ------------------------------------------------------------------
+   Accesibilidad: menos movimiento
+   ------------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .petalos {
+    display: none;
+  }
+
+  .intro__boton {
+    animation: none;
+  }
+}
+
+/* La pausa mantiene el movimiento de las flores y partículas. */
+body.audio-pausado .destello { animation-play-state: paused; }
+body.audio-pausado #lyrics { transition: none; }
+.btn-reiniciar {
+  position: fixed; left: 18px; bottom: 18px; z-index: 400;
+  padding: 11px 16px; border: 1px solid rgba(255,217,59,.35);
+  border-radius: 999px; background: rgba(0,0,0,.65);
+  color: var(--crema); font: inherit; cursor: pointer;
+}
+.btn-reiniciar:hover, .btn-reiniciar:focus-visible {
+  background: rgba(255,217,59,.14);
+  outline: 2px solid var(--amarillo); outline-offset: 3px;
+}
+.btn-reiniciar[hidden] { display: none; }
+
+/* Lectura de la dedicatoria completa */
+.btn-leer {
+  position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%);
+  z-index: 400; padding: 11px 16px; border: 1px solid rgba(255,217,59,.5);
+  border-radius: 999px; background: rgba(0,0,0,.7); color: var(--crema);
+  font: inherit; cursor: pointer;
+}
+.btn-leer[hidden] { display: none; }
+.lectura {
+  position: fixed; inset: 0; width: 100%; max-width: none;
+  height: 100%; max-height: none; margin: 0; padding: 28px 22px 60px;
+  border: 0; overflow-y: auto; overscroll-behavior: contain;
+  background: radial-gradient(ellipse at top, #17211b, #050806 70%);
+  color: var(--blanco-calido); font-family: var(--sans);
+}
+.lectura::backdrop { background: #050806; }
+.lectura__contenido { width: min(100%, 680px); margin: 0 auto; }
+.lectura__volver {
+  padding: 10px 16px; border: 1px solid rgba(255,217,59,.4);
+  border-radius: 999px; background: transparent; color: var(--crema);
+  font: inherit; cursor: pointer; margin-bottom: 38px;
+}
+.lectura h2 { font: italic 2.4rem var(--serif); color: var(--crema); margin-bottom: 24px; }
+.lectura__dedicatoria { font: italic 1.2rem/1.9 var(--serif); color: var(--crema); margin-bottom: 28px; }
+.lectura audio { display: block; width: 100%; margin-bottom: 32px; }
+#lectura-mensajes p { font-size: 1.08rem; line-height: 1.95; margin: 0 0 24px; }
+#lectura-mensajes p:last-child { color: var(--crema); font: italic 1.8rem var(--serif); }
+#lectura-aviso { margin-bottom: 24px; color: var(--crema); }
+.btn-leer:focus-visible, .lectura__volver:focus-visible { outline: 2px solid var(--amarillo); outline-offset: 4px; }
+@media (max-width: 400px) {
+  .btn-leer { font-size: .82rem; padding: 12px 10px; }
+  .btn-reiniciar { left: 10px; font-size: .82rem; padding: 12px 10px; }
+}
